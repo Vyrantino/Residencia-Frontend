@@ -5,7 +5,8 @@
     Se puede descargar el documento de nuevo
 */
 import axios from 'axios' ; 
-import * as jsFileDownload from 'js-file-download' ;
+import fileDownload from 'js-file-download';
+
 const apiUrlDocumentos = import.meta.env.VITE_API_URL + 'documentos' ; 
 
 
@@ -42,7 +43,7 @@ export const descargarDocumento = async( documento ) =>{//Se puede descargar un 
         ) ;
         const split = documento.Nombre.split('.') ;
         const fileName = split[0] ;
-        const file = jsFileDownload( response.data , `${ fileName }.docx` ) ; 
+        const file = fileDownload( response.data , `${ fileName }.docx` ) ; 
         return file ; 
     }
     catch( error ){

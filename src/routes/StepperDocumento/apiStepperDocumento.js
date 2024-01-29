@@ -1,6 +1,6 @@
 
 import axios from 'axios' ; 
-import * as jsFileDownload from 'js-file-download' ;
+import fileDownload from 'js-file-download';
 
 const apiUrlUsuarios = import.meta.env.VITE_API_URL + 'usuarios' ;
 const apiUrlPlantillas = import.meta.env.VITE_API_URL + 'plantillas/' ;
@@ -34,7 +34,7 @@ export const downloadDocumento = async ( documento ) =>{//Crea un nuevo document
         ) ;
         const splitFileName = documento.nombreArchivo.split( '.' ) ;
         const fileName = documento.nombreDocumento ? documento.nombreDocumento : splitFileName[0] ;
-        const download = jsFileDownload( file.data , `${ fileName }.docx` ) ; 
+        const download =  fileDownload( file.data , `${ fileName }.docx` ) ; 
         return download ; 
     }
     catch( error ){
