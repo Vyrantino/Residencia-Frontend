@@ -8,6 +8,7 @@ export default function Formularios( props ){
             {
             props.formulario.map( ( nombre ) => (
                 <Grid
+                    key={ `Grid ${nombre}` }
                     item 
                     xs={12}
                 > 
@@ -15,7 +16,7 @@ export default function Formularios( props ){
                         size='medium'
                         multiline ={ true }
                         label = { nombre }
-                        key={nombre}
+                        key={`TextField ${nombre}`}
                         fullWidth
                         variant="filled"
                         color="primary"

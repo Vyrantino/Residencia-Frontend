@@ -1,24 +1,16 @@
-import { 
-    Box, 
+import {  
     Button, 
-    Container, 
-    FormControl, 
-    FormGroup, 
     TextField , 
     Grid ,
     Typography
 } from "@mui/material";
-import { useDispatch, useSelector } from "react-redux";
-import { actionLogOut, actionLogin } from "../../redux/usuarios/userSlice";
+import { useDispatch } from "react-redux";
+import { actionLogin } from "../../redux/usuarios/userSlice";
 import * as React from 'react' ; 
 import {  userLogin } from "./apiLogin";
-import Register from "../Register/register";
 import itdLogo from '../../assets/itd.png' ; 
 
-
-
 export default function Login(){
-    const [ Registrarse , toogleRegistrarse ] = React.useState( false ) ;
     const [ Username , setUsername ] = React.useState( '' ) ; 
     const [ Password , setPassword ] = React.useState( '' ) ; 
     const dispatch = useDispatch() ;
@@ -42,6 +34,9 @@ export default function Login(){
             handleLogin([]) ;
         }
     }
+    
+    
+
         return(
             <Grid
                 display="flex"
